@@ -23,7 +23,14 @@ function camelCaseWithFirstCharUpper(input){
 }
 
 function isDate(date) {
-    return ((new Date(date) !== "Invalid Date" && !isNaN(new Date(date))) && isNaN((+date)));
+	//alert();
+	//alert(date+"~"+new Date(date));
+	//console.log(date+"~"+new Date(date))
+    //return ((new Date(date) !== "Invalid Date" && !isNaN(new Date(date))) && isNaN((+date)));
+	//return isNaN(date)&&!isNaN(Date.parse(date)) ;
+	var reg = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/;
+    var isDate = reg.test(date);
+	return isDate ;
 }
 
 function isInt(n) {
