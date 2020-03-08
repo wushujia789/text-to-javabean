@@ -11,7 +11,8 @@ function firstToUpperCase(str) {
 }
 
 function camelCase(input) {
-    return input.toLowerCase().replace(/_(.)/g, function(match, group1) {
+	//input = input.toLowerCase() ;
+    return input.replace(/_(.)/g, function(match, group1) {
         return group1.toUpperCase();
     });
 }

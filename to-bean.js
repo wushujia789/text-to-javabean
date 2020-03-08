@@ -184,12 +184,12 @@ function getTypeFromJsonVal(val,key,attrClassAry) {
     var typeofStr = typeof(val);
     if (typeofStr === 'number') {
         if (isInt(val)) {
-            return "int";
+            return "Integer";
         } else {
-            return "double";
+            return "Double";
         }
     } else if (typeofStr === 'boolean') {
-        return typeofStr;
+        return "Boolean";
     } else if (isDate(val)) {
         return "Date";
     } else if(!val){
