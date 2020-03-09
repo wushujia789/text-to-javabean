@@ -113,8 +113,9 @@ function toBeanText(bean) {
             importText += "import " + importMap[t] + ";\n";
         }
     }
+	importText += "import com.fasterxml.jackson.annotation.JsonIgnoreProperties;\n";
     if (shoudImportJackson) {
-        importText += "import com.fasterxml.jackson.annotation.JsonIgnoreProperties;\nimport com.fasterxml.jackson.annotation.JsonProperty;"
+        importText += "import com.fasterxml.jackson.annotation.JsonProperty;"
     }
     var packageName = document.getElementById('package-input').value;
     if(packageName){
