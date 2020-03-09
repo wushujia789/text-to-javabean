@@ -114,7 +114,7 @@ function toBeanText(bean) {
         }
     }
     if (shoudImportJackson) {
-        importText += "import org.codehaus.jackson.annotate.JsonIgnoreProperties;\nimport org.codehaus.jackson.annotate.JsonProperty;"
+        importText += "import com.fasterxml.jackson.annotation.JsonIgnoreProperties;\nimport com.fasterxml.jackson.annotation.JsonProperty;"
     }
     var packageName = document.getElementById('package-input').value;
     if(packageName){
@@ -122,7 +122,7 @@ function toBeanText(bean) {
     }
 
     //把import,属性定义，setter，getter拼到一起，就是一个完整的java bean了
-    return importText + "\n\n   \npublic class "+className+" {\n\n" + fieldText + setterText + "\n}";
+    return importText + "\n\n   \n@JsonIgnoreProperties(ignoreUnknown = true)\npublic class "+className+" {\n\n" + fieldText + setterText + "\n}";
 }
 
 /**
